@@ -1,7 +1,7 @@
 [package]
 name = "radio-sx127x"
 description = "Rust driver for the Semtec SX127x Sub GHZ LoRa Radio ICs"
-version = "0.14.0"
+version = "0.15.0"
 authors = ["Ryan Kurte <ryankurte@gmail.com>"]
 repository = "https://github.com/ryankurte/rust-radio-sx127x"
 license = "MPL-2.0"
@@ -16,7 +16,7 @@ util = [ "clap", "driver-pal", "driver-pal/hal", "simplelog", "humantime" ]
 default = [ "util", "serde", "driver-pal/hal-cp2130", "driver-pal/hal-linux" ]
 
 [dependencies]
-radio = "0.11.0"
+radio = { git = "https://github.com/rust-iot/radio-hal", branch = "update-embedded-hal" }
 embedded-hal = "1.0.0-rc.1"
 libc = "0.2"
 log = { version = "0.4" }
@@ -46,6 +46,6 @@ required-features = ["utils"]
 
 [patch.crates-io]
 linux-embedded-hal = { git = "https://github.com/rust-embedded/linux-embedded-hal" }
-radio = { git = "https://github.com/rust-iot/radio" }
-driver-pal = { git = "https://github.com/rust-iot/driver-pal" }
+radio = { git = "https://github.com/rust-iot/radio-hal", branch = "update-embedded-hal" }
+driver-pal = { git = "https://github.com/ryankurte/rust-driver-pal" }
 driver-cp2130 = { git = "https://github.com/rust-iot/rust-driver-cp2130" }
